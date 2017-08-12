@@ -23,14 +23,15 @@ namespace TemperatureConversion
         {
             if (string.IsNullOrEmpty((DegreesEntry.Text)))
             {
-                DisplayAlert("Error", "You must enter a value in Fahrenheit..", "Accept");
+                DisplayAlert("Error", "You must enter a value in Fahrenheit degrees..", "Accept");
                 return;
             }
 
             decimal degrees = 0;
             if (!decimal.TryParse(DegreesEntry.Text, out degrees))
             {
-                DisplayAlert("Error", "You must enter a value in degrees..", "Accept");
+                DisplayAlert("Error", "You must enter a value numeric in degrees of temperature..", "Accept");
+                DegreesEntry.Text = null;
                 return;
             }
             var celsius = (degrees - 32) / 1.8M;
@@ -42,18 +43,20 @@ namespace TemperatureConversion
         {
             if (string.IsNullOrEmpty((DegreesEntry.Text)))
             {
-                DisplayAlert("Error", "You must enter a value in Celsius", "Accept");
+                DisplayAlert("Error", "You must enter a value in Celsius degrees..", "Accept");
                 return;
             }
 
             double degrees = 0;
             if (!double.TryParse(DegreesEntry.Text, out degrees))
             {
-                DisplayAlert("Error", "You must enter a value in degrees..", "Accept");
+                DisplayAlert("Error", "You must enter a value numeric in degrees of temperature..", "Accept");
+                DegreesEntry.Text = null;
                 return;
             }
             double fahrenheit = (degrees * 1.8) + 32D;
             FahrenheitEntry.Text = string.Format("{0:C2}", fahrenheit);
+
         }
     }
 }
