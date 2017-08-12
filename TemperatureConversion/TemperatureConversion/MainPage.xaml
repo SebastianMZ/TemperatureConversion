@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TemperatureConversion"
+             x:Class="TemperatureConversion.MainPage">
+
+    <StackLayout 
+        Padding="20">
+        <Label 
+            HorizontalOptions="Center" 
+            FontSize="Large" 
+            Text="Temperature Conversion">
+        </Label>
+        <Label 
+            Text="Degrees of temperature:">
+        </Label>
+        <Entry 
+            x:Name="DegreesEntry" 
+            Keyboard="Numeric" 
+            Placeholder="Enter an amount in degrees...">
+        </Entry>
+        <Button 
+            x:Name="ConvertToCsButton" 
+            Text="Convert Fh to Celsius">
+        </Button>
+        <Label 
+            Text="Celsius:">
+        </Label>
+        <Entry 
+            x:Name="CelsiusEntry" 
+            IsEnabled="false" 
+            Placeholder="Degrees in Celsius...">
+        </Entry>
+        <Button 
+            x:Name="ConvertToFhButton" 
+            Text="Convert Cs to Fahrenheit">
+        </Button>
+        <Label 
+            Text="Fahrenheit:">
+        </Label>
+        <Entry 
+            x:Name="FahrenheitEntry" 
+            IsEnabled="false" 
+            Placeholder="Degrees in Fahrenheit...">
+        </Entry>
+    </StackLayout>
+
+</ContentPage>
